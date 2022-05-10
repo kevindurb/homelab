@@ -1,5 +1,5 @@
 ---
-- hosts: localhost
-  remote_user: root
+- hosts: nodes
+  remote_user: kevindurb
   roles:
     - k3s-node
