@@ -1,0 +1,3 @@
+#! /bin/bash
+
+multipass stop node01 node02 node03

@@ -1,0 +1,7 @@
+---
+users:
+  - name: kevindurb
+    sudo: true
+    shell: /bin/bash
+    ssh_import_id:
+      - gh:kevindurb
