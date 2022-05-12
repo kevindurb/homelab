@@ -1,7 +1,0 @@
-#! /bin/bash
-
-multipass launch --cloud-init ./test/cloud-init.yaml --name node01 21.10 &
-multipass launch --cloud-init ./test/cloud-init.yaml --name node02 21.10 &
-multipass launch --cloud-init ./test/cloud-init.yaml --name node03 21.10 &
-
-wait

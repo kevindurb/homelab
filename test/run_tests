@@ -1,5 +1,0 @@
-#! /bin/bash
-
-./test/build_cluster_inventory > ./inventory/test
-
-ansible-playbook --inventory ./inventory/test ./roles/k3s-node/tests/test.yml

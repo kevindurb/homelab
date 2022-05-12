@@ -1,8 +1,0 @@
-#! /bin/bash
-
-IP_ADDRESSES=$(multipass list | grep ^node | awk '{ print $3 }')
-
-cat <<EOF
-[nodes]
-$IP_ADDRESSES
-EOF

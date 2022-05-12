@@ -1,0 +1,5 @@
+#! /bin/bash
+
+k3d cluster create \
+  --port "1337:80" \
+  --agents 3
