@@ -17,4 +17,4 @@ data:
 
     [remote_cache]
     type = redis
-    connstr = addr=redis,password=$__env{REDIS_PASSWORD}
+    connstr = addr=grafana-redis-service

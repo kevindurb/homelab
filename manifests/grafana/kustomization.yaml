@@ -9,6 +9,8 @@ resources:
   - ./ingress.yaml
   - ./postgres_deployment.yaml
   - ./postgres_service.yaml
+  - ./redis_deployment.yaml
+  - ./redis_service.yaml
 
 secretGenerator:
   - name: grafana-secrets
