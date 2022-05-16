@@ -11,6 +11,7 @@ resources:
   - ./postgres_service.yaml
   - ./redis_deployment.yaml
   - ./redis_service.yaml
+  - ./postgres_volume.yaml
 
 secretGenerator:
   - name: grafana-secrets

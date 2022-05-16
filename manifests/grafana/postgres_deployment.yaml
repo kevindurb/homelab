@@ -31,3 +31,10 @@ spec:
           ports:
             - name: postgres
               containerPort: 5432
+          volumeMounts:
+            - name: grafana-postgres-data
+              mountPath: /var/lib/postgres
+      volumes:
+      - name: grafana-postgres-data
+        persistentVolumeClaim:
+          claimName: grafana-postgres-pv-claim
