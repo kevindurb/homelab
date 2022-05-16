@@ -1,0 +1,33 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grafana-postgres-deployment
+  labels:
+    app: grafana-postgres
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: grafana-postgres
+  template:
+    metadata:
+      labels:
+        app: grafana-postgres
+    spec:
+      containers:
+        - name: grafana-postgres
+          image: docker.io/postgres:13
+          env:
+            - name: POSTGRES_USER
+              value: grafana
+            - name: POSTGRES_DB
+              value: grafana
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: gf-database-password
+                  key: password
+          ports:
+            - name: postgres
+              containerPort: 5432
