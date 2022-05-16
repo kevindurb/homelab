@@ -19,19 +19,24 @@ spec:
         - name: grafana
           image: docker.io/grafana/grafana:8.0.3
           env:
-            - name: GF_INSTALL_PLUGINS
-              value: flant-statusmap-panel,ae3e-plotly-panel
+            # - name: GF_INSTALL_PLUGINS
+            #   value: flant-statusmap-panel,ae3e-plotly-panel
             - name: GF_SERVER_ROOT_URL
               value: https://grafana.durbin.casa
             - name: GF_RENDERING_SERVER_URL
               value: http://grafana_renderer:8081/render
             - name: GF_RENDERING_CALLBACK_URL
               value: http://grafana:3000
-            - name: GF_DATABASE_URL
+            - name: POSTGRES_URL
               valueFrom:
                 secretKeyRef:
-                  name: gf-database-url
-                  key: password
+                  name: grafana-secrets
+                  key: POSTGRES_URL
+            - name: REDIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: grafana-secrets
+                  key: REDIS_PASSWORD
           ports:
             - name: web
               containerPort: 3000

@@ -9,3 +9,8 @@ resources:
   - ./ingress.yaml
   - ./postgres_deployment.yaml
   - ./postgres_service.yaml
+
+secretGenerator:
+  - name: grafana-secrets
+    envs:
+      - grafana.env

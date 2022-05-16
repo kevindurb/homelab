@@ -13,7 +13,7 @@ data:
 
     [database]
     type = postgres
-    url = $__env{GF_DATABASE_URL}
+    url = $__env{POSTGRES_URL}
 
     [remote_cache]
     type = redis
