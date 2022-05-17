@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: grafana-config
+  name: config
 data:
   grafana.ini: |
     [auth.basic]

@@ -1,25 +1,24 @@
 ---
-# TODO: requires nodeAffinity
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: grafana-postgres-pv
+  name: data-pv
 spec:
-  storageClassName: local-storage
+  storageClassName: manual
   capacity:
     storage: 20Gi
   accessModes:
     - ReadWriteOnce
-  local:
-    path: /mnt/data
+  hostPath:
+    path: '/tmp/k3dvol'
 
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: grafana-postgres-pv-claim
+  name: data-pvc
 spec:
-  storageClassName: local-storage
+  storageClassName: manual
   accessModes:
     - ReadWriteOnce
   resources:

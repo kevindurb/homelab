@@ -2,21 +2,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: grafana-redis-deployment
+  name: redis-deployment
   labels:
-    app: grafana-redis
+    app: redis
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: grafana-redis
+      app: redis
   template:
     metadata:
       labels:
-        app: grafana-redis
+        app: redis
     spec:
       containers:
-        - name: grafana-redis
+        - name: redis
           image: docker.io/redis:6.2-alpine
           ports:
             - name: redis
