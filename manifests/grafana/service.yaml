@@ -4,6 +4,8 @@ kind: Service
 metadata:
   name: service
 spec:
+  selector:
+    component: web
   ports:
     - name: web
       port: 80

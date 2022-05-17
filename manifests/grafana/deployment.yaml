@@ -3,10 +3,17 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: deployment
+  labels:
+    component: web
 spec:
   replicas: 3
-  selector: {}
+  selector:
+    matchLabels:
+      component: web
   template:
+    metadata:
+      labels:
+        component: web
     spec:
       containers:
         - name: grafana

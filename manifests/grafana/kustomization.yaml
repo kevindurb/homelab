@@ -10,12 +10,11 @@ labels:
     includeSelectors: true
 
 resources:
-  - ./grafana_config.yaml
-  - ./grafana_deployment.yaml
-  - ./grafana_service.yaml
+  - ./config.yaml
+  - ./deployment.yaml
+  - ./service.yaml
   - ./ingress.yaml
-  - ./redis_deployment.yaml
-  - ./redis_service.yaml
+  - ../redis
   - ../postgres
 
 secretGenerator:
