@@ -2,18 +2,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: whoami-deployment
+  name: deployment
   labels:
-    app: whoami
+    component: whoami
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: whoami
+      component: whoami
   template:
     metadata:
       labels:
-        app: whoami
+        component: whoami
     spec:
       containers:
         - name: whoami
