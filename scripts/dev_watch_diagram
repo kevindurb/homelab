@@ -1,0 +1,5 @@
+#! /bin/bash
+
+DIAGRAM=$1
+
+find ./diagrams | entr ./scripts/build_and_open_diagram $DIAGRAM

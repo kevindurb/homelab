@@ -1,0 +1,5 @@
+#! /bin/bash
+
+DIAGRAM=$1
+
+./scripts/build_diagram $DIAGRAM && open -g ./dist/$DIAGRAM.png

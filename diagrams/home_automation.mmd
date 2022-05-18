@@ -1,0 +1,12 @@
+erDiagram
+  SmartPlugs }|--|| MqttBroker : mqtt
+  Shellys }|--|| MqttBroker : mqtt
+  NodeRed ||--|| MqttBroker : mqtt
+
+  ZigbeeMqttBridge ||--|| MqttBroker: mqtt
+  ZigbeeButtons }|--|| ZigbeeMqttBridge : zigbee
+  ZigbeeSensors }|--|| ZigbeeMqttBridge : zigbee
+
+  OwnTracks }|--|| MqttBroker : mqtt
+
+  Dashboard ||--|| NodeRed : http
