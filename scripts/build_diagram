@@ -4,4 +4,6 @@ DIAGRAM=$1
 
 mkdir -p ./dist
 
+echo "Building ./diagrams/$DIAGRAM.mmd"
 mmdc -i ./diagrams/$DIAGRAM.mmd -o ./dist/$DIAGRAM.png
+echo "Done"
