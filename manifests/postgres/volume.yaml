@@ -10,7 +10,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: '/tmp/k3dvol'
+    path: '/tmp/postgres'
 
 ---
 apiVersion: v1
