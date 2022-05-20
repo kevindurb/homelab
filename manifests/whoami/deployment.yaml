@@ -17,8 +17,8 @@ spec:
     spec:
       containers:
         - name: whoami
-          image: docker.io/jwilder/whoami:latest
+          image: docker.io/containous/whoami:latest
           env:
           ports:
             - name: web
-              containerPort: 8000
+              containerPort: 80
