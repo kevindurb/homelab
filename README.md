@@ -14,3 +14,8 @@ erDiagram
   ZigbeeButtons }|--|| ZigbeeMqttBridge : zigbee
   ZigbeeSensors }|--|| ZigbeeMqttBridge : zigbee
 ```
+
+## TODO
+ - [ ] Add persistant storage for homeassistant
+ - [ ] Add mqtt (metal lb?)
+ - [ ] Add nodered (metal lb?)
