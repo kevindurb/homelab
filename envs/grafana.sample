@@ -1,0 +1,5 @@
+REDIS_PASSWORD=supersecret
+POSTGRES_URL=postgres://grafana:supersecret@grafana-postgres-service:5432/grafana
+POSTGRES_PASSWORD=supersecret
+POSTGRES_USER=grafana
+POSTGRES_DB=grafana

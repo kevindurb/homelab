@@ -2,26 +2,29 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-namePrefix: grafana-
+namePrefix: homeassistant-
 
 labels:
   - pairs:
-      app: grafana
+      app: homeassistant
     includeSelectors: true
 
 resources:
-  - ./config.yaml
   - ./deployment.yaml
   - ./service.yaml
   - ./ingress.yaml
   - ./postgres_volume.yaml
-  - ../redis
   - ../postgres
+
+configMapGenerator:
+  - name: config
+    files:
+      - ./configuration/configuration.yaml
 
 secretGenerator:
   - name: secrets
     envs:
-      - grafana.env
+      - homeassistant.env
 
 replacements:
   - source:
@@ -29,7 +32,7 @@ replacements:
       name: secrets
     targets:
       - select:
-          name: grafana-postgres-deployment
+          name: homeassistant-postgres-deployment
           kind: Deployment
         fieldPaths:
           - spec.template.spec.containers.[name=postgres].env.[name=POSTGRES_PASSWORD].valueFrom.secretKeyRef.name

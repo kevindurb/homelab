@@ -22,20 +22,26 @@ spec:
           image: docker.io/postgres:13
           env:
             - name: POSTGRES_USER
-              value: postgres
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secrets
+                  key: POSTGRES_USER
             - name: POSTGRES_DB
-              value: postgres
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secrets
+                  key: POSTGRES_DB
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: postgres-password
+                  name: postgres-secrets
                   key: POSTGRES_PASSWORD
           ports:
             - name: postgres
               containerPort: 5432
           volumeMounts:
             - name: data
-              mountPath: /var/lib/postgres
+              mountPath: /var/lib/postgresql/data
       volumes:
         - name: data
           persistentVolumeClaim:

@@ -6,3 +6,4 @@ resources:
   - ./grafana
   - ./adminer
   - ./whoami
+  - ./homeassistant

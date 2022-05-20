@@ -1,0 +1,4 @@
+POSTGRES_URL=postgresql://homeassistant:supersecret@homeassistant-postgres-service:5432/homeassistant
+POSTGRES_PASSWORD=supersecret
+POSTGRES_USER=homeassistant
+POSTGRES_DB=homeassistant
