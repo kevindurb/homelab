@@ -1,11 +1,11 @@
-import { Deployment } from '../../types/kubernetes';
+import { Deployment } from '../../entities/Deployment';
 
 const labels = {
   app: 'nodered',
   component: 'web',
 };
 
-export const deployment: Deployment = {
+export const deployment = new Deployment({
   apiVersion: 'apps/v1',
   kind: 'Deployment',
   metadata: {
@@ -32,4 +32,4 @@ export const deployment: Deployment = {
       },
     },
   },
-};
+});
