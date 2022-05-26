@@ -5,7 +5,3 @@ description: A helm chart to deploy my homelab
 type: application
 version: 0.1.0
 appVersion: '1.16.0'
-dependencies:
-  - name: metallb
-    version: '^0.12.1'
-    repository: https://metallb.github.io/metallb
