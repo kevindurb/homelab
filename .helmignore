@@ -21,3 +21,12 @@
 .idea/
 *.tmproj
 .vscode/
+# other
+node_modules
+diagrams
+generators
+inventory
+playooks
+roles
+scripts
+vars
